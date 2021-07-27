@@ -8,7 +8,7 @@ public class Seller {
         this.carShop = carShop;
     }
 
-    public synchronized void produceCar() {
+    public void produceCar() {
         synchronized (carShop) {
             if (carShop.getCarCount() < carShop.getMaxSellCount()) {
                 try {
