@@ -5,17 +5,17 @@ public class CarShop {
     Seller seller = new Seller(this);
     List<Car> cars = new ArrayList<>(10);
     private int carCount = 0;
-    protected static final int MAX_SELL_COUNT = 10;
+    private static final int MAX_SELL_COUNT = 10;
 
-    public void buyCar(){
+    public void buyCar() {
         seller.buyCar();
     }
 
-    public void produceCar(){
+    public void produceCar() {
         seller.produceCar();
     }
 
-    List<Car> getCars(){
+    List<Car> getCars() {
         return cars;
     }
 
@@ -23,11 +23,11 @@ public class CarShop {
         return carCount;
     }
 
-    public int getMaxSellCount(){
+    public int getMaxSellCount() {
         return MAX_SELL_COUNT;
     }
 
-    public void plusCarCount(){
+    public void plusCarCount() {
         carCount++;
     }
 }
