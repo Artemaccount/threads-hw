@@ -5,7 +5,7 @@ public class Main {
         ThreadGroup customers = new ThreadGroup("All Threads");
         ThreadGroup producers = new ThreadGroup("Producers");
 
-        while (carShop.getCarCount() < carShop.getMaxSellCount()) {
+        while (carShop.getCarCount() <= carShop.getMaxSellCount()) {
 
             new Thread(producers, carShop::produceCar, "Toyota").start();
 

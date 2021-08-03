@@ -9,22 +9,21 @@ public class Seller {
     }
 
     public void produceCar() {
+        try {
+            Thread.sleep(PRODUCE_CAR_TIME);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         synchronized (carShop) {
             if (carShop.getCarCount() < carShop.getMaxSellCount()) {
-                try {
-                    Thread.sleep(PRODUCE_CAR_TIME);
                     System.out.println("Производитель " + Thread.currentThread().getName() + " выпустил 1 авто");
                     carShop.getCars().add(new Car());
                     System.out.println("Автомобиль поступил в автосалон");
                     carShop.notify();
-                } catch (InterruptedException e) {
                     carShop.getCars().add(new Car());
-                    Thread.currentThread().interrupt();
                 }
-                new Car();
             }
         }
-    }
 
     public void buyCar() {
         synchronized (carShop) {
