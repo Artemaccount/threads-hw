@@ -3,8 +3,8 @@ import java.util.List;
 
 public class CarShop {
     Seller seller = new Seller(this);
-    List<Car> cars = new ArrayList<>(10);
-    private int carCount = 0;
+    private static List<Car> cars = new ArrayList<>(10);
+    private static int carCount = 0;
     private static final int MAX_SELL_COUNT = 10;
 
     public void buyCar() {
